@@ -5,6 +5,10 @@
 # /home/linksnova007/tmp/import-domains.sh
 # /home/linksnova007/tmp/import-domains.sh > /home/linksnova007/tmp/import.log 2>&1
 
+# resources
+# https://developer.wordpress.org/cli/commands/
+# https://hestiacp.com/docs/reference/cli.html
+
 # Configuration
 HESTIA_USER="linksnova007"
 IP_ADDR="46.202.194.99"
