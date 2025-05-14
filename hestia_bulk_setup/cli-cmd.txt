@@ -1,6 +1,8 @@
 
 =============================================================================================
 
+
+ssh root@your_vps_ip
 sudo v-add-letsencrypt-host
 
 /home/linksnova007/
