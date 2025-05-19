@@ -5,6 +5,9 @@
 ssh root@your_vps_ip
 sudo v-add-letsencrypt-host
 
+tail -f /var/log/nginx/error.log
+tail -n 50 /var/log/nginx/error.log
+
 /home/linksnova007/
 touch /root/yourfile.sh
 nano /root/yourfile.sh
