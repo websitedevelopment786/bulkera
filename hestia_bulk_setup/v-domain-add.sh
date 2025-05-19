@@ -3,7 +3,7 @@
 
 # Configuration
 USER="linksnova007"
-IP="REPLACE_WITH_YOUR_SERVER_IP" # Replace this with your server's actual IP curl ifconfig.me
+IP="REPLACE_WITH_YOUR_SERVER_IP" # Replace this with your server's actual IP / curl ifconfig.me
 DOMAIN_LIST="/home/linksnova007/tmp/domains/domains.txt"
 LOG_FILE="/home/linksnova007/tmp/domains/domain_addition.log"
 
