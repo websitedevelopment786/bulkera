@@ -26,6 +26,9 @@ while IFS= read -r domain; do
     else
         echo "Error: Failed to add $domain (already exists?)" >> "$LOG_FILE"
     fi
+
+    # Add 1-second delay before processing the next domain
+    sleep 2
 done < "$DOMAIN_LIST"
 
 echo "Bulk domain addition completed. Check log: $LOG_FILE"
