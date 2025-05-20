@@ -2,6 +2,18 @@
 =============================================================================================
 
 
+| ✅ Item                        | Command / Action                                     |
+| ----------------------------- | ---------------------------------------------------- |
+| Port 80/443 open              | `sudo ufw allow 80,443`                              |
+| Domain DNS pointing           | `ping yourdomain.com`                                |
+| Check DNS from another server | `dig +short yourdomain.com`                          |
+| Manual SSL issue              | `sudo v-add-letsencrypt-domain admin yourdomain.com` |
+| No proxy at Cloudflare        | Grey cloud for all DNS records                       |
+| Web server running            | `sudo systemctl status nginx`                        |
+
+
+
+
 ssh root@your_vps_ip
 sudo v-add-letsencrypt-host
 
