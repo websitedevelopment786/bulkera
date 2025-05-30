@@ -1,0 +1,76 @@
+
+
+-------------------------------
+
+
+
+Create a text file (domains.txt) with all your domains (one per line):
+
+
+domain1.com
+domain2.com
+...
+domain500.com
+
+
+
+-------------------------------
+
+
+
+
+
+add_domains.sh =>
+
+
+
+#!/bin/bash
+USER="admin"  # Replace with your Hestia username
+IP="your_server_ip"  # Your VPS IP
+
+while read domain; do
+  # Add domain without waiting for SSL (faster)
+  v-add-domain "$USER" "$domain" "$IP" "no"
+  echo "Added domain: $domain"
+done < domains.txt
+
+# Restart services after all domains are added
+v-restart-web
+
+
+
+
+
+
+-------------------------------
+
+
+
+enable_ssl.sh =>
+
+
+
+#!/bin/bash
+USER="admin"
+EMAIL="admin@example.com"  # Use your real email for Let's Encrypt
+
+while read domain; do
+  # Request SSL certificate
+  v-add-letsencrypt-domain "$USER" "$domain" "" "$EMAIL" "no"
+  echo "Requested SSL for: $domain"
+  
+  # Pause every 50 domains to avoid rate limits
+  if (( $count % 50 == 0 )); then
+    sleep 300  # 5-minute pause every 50 domains
+  fi
+done < domains.txt
+
+# Final service restart
+v-restart-web
+
+
+
+
+
+
+-------------------------------
